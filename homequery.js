@@ -79,7 +79,8 @@ function showitem(res,string){
    var id=string[0];
    var pid=string[1];   //parentid
    if (nokids(res,id,string[2])){     //if nokids, display the object simple below
-      res.write( "{name:'"+string[2]+"-"+id+"="+pid+"'},");
+      //res.write( "{name:'"+string[2]+"-"+id+"="+pid+"'},");
+      res.write( "{name:'"+string[2]+"'},");
    }
 }
 function nokids(res,id,pname){
