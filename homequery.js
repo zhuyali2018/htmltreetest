@@ -117,7 +117,7 @@ function nokids(res,id,pname){
 function requestHandler(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<!DOCTYPE html>');
-  res.write('<html><head>');
+  res.write('<html><head><meta charset="UTF-8">');
   res.write('<style>');
   res.write(mystyle);     //style sheet printed here
   res.write('</style>');
@@ -157,7 +157,8 @@ var server = http.createServer(requestHandler).listen(8081);
 console.log("homequery ver 1.02");
 
 var networkInterfaces = os.networkInterfaces( );
-//var myip=networkInterfaces['Wi-Fi'][1]['address'];
-var myip=networkInterfaces['eth1'][0]['address'];
+console.log(networkInterfaces);
+var myip=networkInterfaces['Wi-Fi'][3]['address'];
+//var myip=networkInterfaces['eth1'][0]['address'];
 console.log("Use this url:  http://"+myip+":8081/")
 
