@@ -157,8 +157,8 @@ var server = http.createServer(requestHandler).listen(8081);
 console.log("homequery ver 1.02");
 
 var networkInterfaces = os.networkInterfaces( );
-console.log(networkInterfaces);
-var myip=networkInterfaces['Wi-Fi'][3]['address'];
-//var myip=networkInterfaces['eth1'][0]['address'];
+//console.log(networkInterfaces);
+//var myip=networkInterfaces['Wi-Fi'][3]['address'];
+var myip=networkInterfaces['eth1'][0]['address'];
 console.log("Use this url:  http://"+myip+":8081/")
 
