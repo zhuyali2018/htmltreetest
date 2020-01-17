@@ -156,8 +156,9 @@ function requestHandler(req, res) {
      res.write(  "tree.on('open', e => console.log('open', e));");
      res.write(  "tree.on('select', e => { ");
      res.write(  "   try { ");
-     res.write(  "         parent.frames['frame2'].document.getElementById ('desp').innerHTML=e.node.desp;");
-     res.write(  "         parent.frames['frame3'].document.getElementById ('imglnk').innerHTML=e.node.imag;");
+     res.write(  "         parent.frames['frame2'].document.getElementById('desp').innerHTML=e.node.desp;");
+     res.write(  "         parent.frames['frame3'].document.getElementById('imglnk').innerHTML=e.node.imag;");
+     res.write(  "         parent.frames['frame3'].document.getElementById('img').src='http://127.0.0.1:8080/'+e.node.imag.substring(9);");
      //res.write(  "   console.log(e);");
      //res.write(  "   console.log(e.node);");
      //res.write(  "   console.log(e.node.desp);");
@@ -214,7 +215,7 @@ function requestHandler(req, res) {
      res.write('<body>');
      res.write('<center>stuff detail</center>');
      res.write('<p id="imglnk">stuff detail</p>');
-     res.write('  <img src="image1.png" alt="Smiley face" height="1000" width="512">');
+     res.write('  <img id="img" src="http://10.14.147.88:8080/image1.png" alt="Smiley face" height="1000" width="512">');
      res.write('</body>');
      res.write('</html>');
      res.end();
